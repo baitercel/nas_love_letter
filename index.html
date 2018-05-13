@@ -51,6 +51,9 @@
 </nav>
 
 
+<div class="noExtension hide" id="noExtension"  style="width: 100%;margin: auto;text-align: center;">
+    运行环境需要 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet" style="color: red;">星云钱包chrome拓展</a>才能顺利运行
+</div>
 
 
 
@@ -128,6 +131,11 @@
 <script src=lib/nebPay.js></script>
 <script src=lib/bootstrap-4.0.0-dist/js/bootstrap.min.js></script>
 <script>
+
+    if(typeof(webExtensionWallet) === "undefined"){
+        $("#noExtension").removeClass("hide")
+    }
+
     var dappAddress = "n1zjP9crw8mDzS17ZApCYZJYEgSUejri3kN";
     var container;
     var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
